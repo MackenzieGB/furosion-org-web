@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FUROSION o.z.</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                height: 100%;
+                font-family: "Arial Black", Arial, sans-serif;
+                background: #fff;
+                color: #000;
+                scroll-behavior: smooth;
+            }
+            body {
+                overflow: hidden;
+            }
+            #scroll-container {
+                display: flex;
+                flex-direction: row;
+                height: 100vh;
+                width: max-content;
+                transition: transform 0.1s ease-out;
+            }
+            .parallax-section {
+                flex: 0 0 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 2rem;
+                position: relative;
+                transition: transform 0.3s ease-out;
+            }
+            /* --- Header --- */
+            header {
+                background: #000;
+                color: #fff;
+            }
+            header h1 {
+                font-size: 8vw;
+                margin: 1rem 0;
+                transition: transform 0.3s;
+            }
+            header p {
+                font-size: 2.5vw;
+                max-width: 600px;
+                margin: 1rem 0;
+                font-weight: bold;
+                transition: transform 0.3s;
+            }
+            .hero-btn {
+                margin-top: 1rem;
+                padding: 1rem 3rem;
+                border: 2px solid #fff;
+                color: #fff;
+                font-weight: bold;
+                font-size: 1rem;
+                transition: 0.3s;
+                position: relative;
+                overflow: hidden;
+            }
+            .hero-btn::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                transition:
+                    width 0.4s,
+                    height 0.4s;
+                z-index: 0;
+            }
+            .hero-btn:hover::before {
+                width: 300%;
+                height: 300%;
+            }
+            .hero-btn:hover {
+                z-index: 1;
+                transform: scale(1.05);
+            }
+            .header-underline {
+                width: 60px;
+                height: 4px;
+                background: #fff;
+                margin-top: 2rem;
+            }
+            /* --- Sticky logo --- */
+            #sticky-logo {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                width: 120px;
+                opacity: 0;
+                transition: all 0.5s ease;
+                z-index: 100;
+            }
+            #sticky-logo.visible {
+                opacity: 1;
+            }
+            @media (max-width: 768px) {
+                #sticky-logo {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                }
+            }
+            /* --- Team Section --- */
+            .team-container {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+            .team-member {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .team-block {
+                width: 150px;
+                height: 150px;
+                background: #000;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: 1rem;
+                transition:
+                    transform 0.3s,
+                    box-shadow 0.3s;
+                overflow: hidden; /* keep image inside */
+            }
+
+            .team-block img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.25s ease;
+            }
+
+            /* hover effect */
+            .team-block:hover img {
+                transform: scale(1.05);
+            }
+
+            /* Responsive adjustments */
+            @media (min-width: 1200px) {
+                .team-block {
+                    width: 150px; /* keep original on large screens */
+                    height: 150px;
+                }
+            }
+
+            @media (max-width: 1024px) {
+                .team-block {
+                    width: 120px;
+                    height: 120px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .team-block {
+                    width: 100px;
+                    height: 100px;
+                    font-size: 0.9rem; /* scale text down too */
+                }
+            }
+            .team-block:hover {
+                transform: scale(1.05);
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            }
+            .team-member p {
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+                color: #555;
+            }
+
+            /* hover effects */
+            .team-link:hover .team-block img {
+                transform: scale(1.05);
+            }
+
+            .team-name {
+                margin-top: 10px;
+                font-weight: 700;
+            }
+
+            .team-role {
+                font-size: 0.9rem;
+                opacity: 0.7;
+            }
+
+            /* --- Projects / Gallery --- */
+            .gallery-container {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 1rem;
+                padding: 2rem 0;
+                scroll-behavior: smooth;
+            }
+            .gallery-item {
+                flex: 0 0 auto;
+                scroll-snap-align: center;
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .gallery-item img {
+                width: 100%;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 0;
+                transition:
+                    transform 0.3s,
+                    box-shadow 0.3s;
+            }
+            .gallery-item img:hover {
+                transform: scale(1.05);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+            .gallery-item h3 {
+                margin-top: 0.5rem;
+                font-size: 1rem;
+                font-weight: bold;
+            }
+            /* --- Text + Image Section --- */
+            .text-image {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                max-width: 1200px;
+                margin: 0 auto;
+                align-items: center;
+                justify-content: center;
+            }
+            .text-image .text {
+                flex: 1;
+                min-width: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .text-image img.text-image-mobile {
+                display: none;
+                margin: 1rem 0;
+            }
+            /* --- Sections --- */
+            .split {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .split .split-half {
+                flex: 1;
+                min-width: 300px;
+                padding: 4rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                transition: transform 0.3s;
+            }
+            .split.black {
+                background: #000;
+                color: #fff;
+            }
+            .split.white {
+                background: #fff;
+                color: #000;
+                border: 4px solid #000;
+            }
+            .block-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 1200px;
+                gap: 2rem;
+                margin: 0 auto;
+            }
+            .block {
+                flex: 1 1 300px;
+                min-width: 280px;
+                padding: 3rem;
+                background: #000;
+                color: #fff;
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                transition: 0.4s transform;
+                cursor: pointer;
+            }
+            .block:hover {
+                transform: translateY(-10px) scale(1.05);
+            }
+            .text-image .text {
+                padding: 2rem;
+                transition: transform 0.3s;
+            }
+            .text-image .image {
+                flex: 1;
+                min-width: 300px;
+                padding: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.3s;
+            }
+            .text-image .image img {
+                max-width: 100%;
+                transition: 0.5s;
+            }
+            .text-image .image img:hover {
+                transform: scale(1.05);
+            }
+            .button-group {
+                text-align: center;
+                margin-top: 2rem;
+            }
+            .button-group a {
+                display: inline-block;
+                margin: 0.5rem;
+                padding: 1rem 2rem;
+                border: 2px solid #000;
+                font-weight: bold;
+                transition: 0.3s;
+                position: relative;
+                overflow: hidden;
+            }
+            .button-group a::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                transition:
+                    width 0.4s,
+                    height 0.4s;
+                z-index: 0;
+            }
+            .button-group a:hover::before {
+                width: 300%;
+                height: 300%;
+            }
+            .button-group a:hover {
+                z-index: 1;
+                transform: scale(1.05);
+            }
+            .docs {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 1200px;
+                gap: 1.5rem;
+                margin: 0 auto;
+            }
+            .doc-card {
+                flex: 1 1 250px;
+                min-width: 200px;
+                padding: 2rem;
+                background: #fff;
+                color: #000;
+                text-align: center;
+                font-weight: bold;
+                border: 4px solid #000;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+            .doc-card:hover {
+                background: #000;
+                color: #fff;
+                transform: scale(1.05);
+            }
+            .quote {
+                max-width: 900px;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 2rem;
+                font-weight: bold;
+                padding: 4rem;
+                transition: transform 0.3s;
+            }
+            .quote span {
+                display: block;
+                margin-top: 2rem;
+                font-size: 1rem;
+                font-weight: normal;
+                color: #555;
+            }
+            .parallax-container {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 2rem;
+                padding: 2rem;
+                transition: transform 0.3s;
+            }
+            .parallax-item {
+                flex: 0 0 250px;
+                scroll-snap-align: center;
+                background: #000;
+                color: #fff;
+                text-align: center;
+                font-weight: bold;
+                padding: 2rem;
+                transition: 0.3s;
+            }
+            .parallax-item img {
+                width: 120px;
+                height: 120px;
+                border-radius: 0;
+                object-fit: cover;
+                margin-bottom: 1rem;
+                will-change: transform;
+            }
+            .parallax-item:hover {
+                transform: scale(1.05);
+            }
+            .parallax-container::-webkit-scrollbar {
+                display: none;
+            }
+            footer {
+                background: #000;
+                color: #fff;
+                text-align: center;
+                padding: 3rem;
+                font-weight: bold;
+            }
+            /* --- Links Hover Animations --- */
+            a {
+                color: inherit;
+                text-decoration: none;
+                font-weight: bold;
+                transition:
+                    color 0.3s ease,
+                    transform 0.3s ease;
+                position: relative;
+            }
+            a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 0%;
+                height: 2px;
+                background: #000;
+                transition: width 0.3s ease;
+            }
+            a:hover {
+                color: #000;
+                transform: scale(1.05);
+            }
+            a:hover::after {
+                width: 100%;
+            }
+            /* --- Gallery / Images --- */
+            .parallax-item img,
+            .text-image .image img {
+                max-width: 250px;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                will-change: transform;
+            }
+            /* --- Progress Bar --- */
+            #progress-bar-container {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 6px;
+                background: #ddd;
+                z-index: 1000;
+            }
+            #progress-bar {
+                width: 0%;
+                height: 100%;
+                background: #000;
+                transition: width 0.1s ease-out;
+            }
+            /* --- Responsive --- */
+            @media (max-width: 768px) {
+                header h1 {
+                    font-size: 15vw;
+                }
+                header p {
+                    font-size: 4vw;
+                }
+                .block {
+                    font-size: 1.2rem;
+                    padding: 2rem;
+                }
+                .text-image {
+                    flex-direction: column;
+                }
+                .parallax-item {
+                    flex: 0 0 70%;
+                }
+                #sticky-logo {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80px;
+                }
+                .team-block {
+                    width: 150px;
+                    height: 150px;
+                    background: #000;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden; /* important */
+                }
+
+                .team-block img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; /* fills square, crops if needed */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <img src="furosionoz_logo.png" id="sticky-logo" alt="FUROSION o.z. Logo" />
+        <div id="scroll-container">
+            <header class="parallax-section">
+                <h1>FUROSION o.z.</h1>
+                <p>Creative, cultural, and community-driven projects. Independent, bold, transparent.</p>
+                <div class="header-underline"></div>
+                <a>⬇</a>
+            </header>
+            <section class="parallax-section" id="mission">
+                <div class="split">
+                    <div class="split-half black">
+                        <h2>MISSION</h2>
+                        <p>
+                            To provide structure, coordination, and support for community driven events and initiatives.
+                        </p>
+                    </div>
+                    <div class="split-half white">
+                        <h2>VISION</h2>
+                        <p>From shared interests to real world connection.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="parallax-section" id="blocks">
+                <h2>Blocks / Cards</h2>
+                <div style="height: 4rem"></div>
+                <div class="block-container">
+                    <div class="block">BLOCK 1</div>
+                    <div class="block">BLOCK 2</div>
+                    <div class="block">BLOCK 3</div>
+                    <div class="block">BLOCK 4</div>
+                </div>
+            </section>
+            <section class="parallax-section">
+                <div class="text-image">
+                    <div class="text">
+                        <h3>Header Here</h3>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div class="button-group"><a href="#">Button 1</a><a href="#">Button 2</a></div>
+                    </div>
+                    <div class="image"><img src="furosionoz_logo_wb.png" alt="Logo" /></div>
+                </div>
+            </section>
+            <section class="parallax-section">
+                <div class="quote">"Lorem ipsum dolor sit amet." <span>- Placeholder Quote</span></div>
+            </section>
+            <section class="parallax-section">
+                <h2>Documents</h2>
+                <div class="docs">
+                    <div class="doc-card">ARTICLES OF ASSOCIATION</div>
+                    <div class="doc-card">INTERNAL REGULATIONS</div>
+                    <div class="doc-card">ANNUAL REPORTS</div>
+                    <div class="doc-card">FINANCIAL TRANSPARENCY</div>
+                </div>
+            </section>
+            <section class="parallax-section">
+                <h2>Our Team</h2>
+                <div class="team-container">
+                    <div class="team-member">
+                        <div class="team-block">PHOTO REDACTED</div>
+                        <p class="team-name">Peter Pisoň</p>
+                        <p class="team-role">Statuary Organ</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-block">Member 2</div>
+                        <p>Role</p>
+                    </div>
+                    <div class="team-member">
+                        <a href="https://link.socialfurs.com/kenziethefloof/" class="team-link">
+                            <div class="team-block">
+                                <img src="kenzie2.jpeg" alt="KenzieTheFloof" />
+                            </div>
+                            <p class="team-name">KenzieTheFloof</p>
+                            <p class="team-role">Executive Director</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="button-group" style="margin-top: 2rem"><a href="#">More Team Members</a></div>
+            </section>
+            <section class="parallax-section">
+                <div class="quote">Active Projects:</div>
+                 <div class="team-container">
+                    <div class="team-member">
+                        <a href="https://furosion.com" class="team-link">
+                            <div class="team-block">
+                                <img src="https://furosion.com/logowbg.png" alt="Furosion Outings Logo" />
+                            </div>
+                            <p class="team-name">Furosion Outings</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section id="join" class="parallax-section">
+                <div class="layer-content text-image">
+                    <div class="text">
+                        <h3>Wanna join us?</h3>
+                        <p>
+                            Do you wanna be a part of something cool? Well now you can! Press the button bellow to apply
+                            for membership.
+                        </p>
+                        <div
+                            class="button-group"
+                            data-fillout-id="5zY3cQdRb9us"
+                            data-fillout-embed-type="popup"
+                            data-fillout-button-text="I Want to Join"
+                            data-fillout-dynamic-resize
+                            data-fillout-button-color="#000000"
+                            data-fillout-inherit-parameters
+                            data-fillout-popup-size="medium"></div>
+                        <script src="https://server.fillout.com/embed/v1/"></script>
+                    </div>
+                </div>
+            </section>
+            <section class="parallax-section">
+                <h2>Call to Action</h2>
+                <div class="button-group">
+                    <a href="#join">Join Us</a><a href="#">Learn More</a><a href="#">Donate</a>
+                </div>
+            </section>
+            <section class="parallax-section">
+                <h2>Contact</h2>
+                <p>FUROSION o.z.</p>
+                <p>Registered seat/Post: Tomášikova 45/A, Bratislava - mestská časť Nové Mesto, 831 04, Slovensko</p>
+                <p>IČO: [IČO]</p>
+                <p>Email: <a href="mailto:contact@furosion.org">contact@furosion.org</a></p>
+            </section>
+            <footer class="parallax-section">© FUROSION o.z. | Registered civic association under Slovak law</footer>
+        </div>
+
+        <div id="progress-bar-container"><div id="progress-bar"></div></div>
+
+        <script>
+            const scrollContainer = document.getElementById("scroll-container");
+            let targetScroll = 0,
+                currentScroll = 0;
+            const ease = 0.08;
+            const sections = document.querySelectorAll(".parallax-section");
+
+            window.addEventListener(
+                "wheel",
+                (e) => {
+                    targetScroll += e.deltaY;
+                    e.preventDefault();
+                },
+                { passive: false }
+            );
+
+            function animate() {
+                const maxScroll = (sections.length - 1) * window.innerWidth;
+                targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+
+                currentScroll += (targetScroll - currentScroll) * ease;
+                scrollContainer.style.transform = `translateX(${-currentScroll}px)`;
+
+                sections.forEach((sec, i) => {
+                    const offset = (currentScroll - i * window.innerWidth) * 0.05;
+                    sec.style.transform = `translateY(${offset}px)`;
+                });
+
+                const stickyLogo = document.getElementById("sticky-logo");
+                if (currentScroll > window.innerWidth) stickyLogo.classList.add("visible");
+                else stickyLogo.classList.remove("visible");
+
+                const progress = currentScroll / maxScroll;
+                document.getElementById("progress-bar").style.width = `${Math.min(100, Math.max(0, progress * 100))}%`;
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        </script>
+    </body>
+</html>
