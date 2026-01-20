@@ -726,7 +726,16 @@ let targetScroll = 0,
 const ease = 0.08;
 const sections = document.querySelectorAll(".parallax-section");
 
-// Handle mouse wheel / trackpad
+// Recalculate max scroll dynamically
+function getMaxScroll() {
+    let totalWidth = 0;
+    sections.forEach(sec => {
+        totalWidth += sec.offsetWidth;
+    });
+    return totalWidth - window.innerWidth;
+}
+
+// Mouse wheel / trackpad
 window.addEventListener(
     "wheel",
     (e) => {
@@ -736,14 +745,12 @@ window.addEventListener(
     { passive: false }
 );
 
-// Handle touch / swipe for mobile
-let touchStartX = 0;
+// Touch / swipe for mobile
 let touchStartY = 0;
 let isTouching = false;
 
 scrollContainer.addEventListener("touchstart", (e) => {
     if (e.touches.length === 1) {
-        touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
         isTouching = true;
     }
@@ -751,14 +758,11 @@ scrollContainer.addEventListener("touchstart", (e) => {
 
 scrollContainer.addEventListener("touchmove", (e) => {
     if (!isTouching) return;
-    const touchX = e.touches[0].clientX;
     const touchY = e.touches[0].clientY;
-    const deltaX = touchStartX - touchX;
     const deltaY = touchStartY - touchY;
 
-    // On mobile, vertical swipe scrolls horizontal container
-    targetScroll += deltaY;
-    touchStartX = touchX;
+    // Scale swipe distance for smoother horizontal scroll
+    targetScroll += deltaY * 1.2; 
     touchStartY = touchY;
 
     e.preventDefault();
@@ -769,15 +773,15 @@ scrollContainer.addEventListener("touchend", () => {
 });
 
 function animate() {
-    const maxScroll = (sections.length - 1) * window.innerWidth;
+    const maxScroll = getMaxScroll(); // use dynamic width
     targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
 
     currentScroll += (targetScroll - currentScroll) * ease;
     scrollContainer.style.transform = `translateX(${-currentScroll}px)`;
 
-    // Parallax offset
+    // Parallax vertical offset
     sections.forEach((sec, i) => {
-        const offset = (currentScroll - i * window.innerWidth) * 0.05;
+        const offset = (currentScroll - i * sec.offsetWidth) * 0.05;
         sec.style.transform = `translateY(${offset}px)`;
     });
 
@@ -794,6 +798,11 @@ function animate() {
 }
 
 animate();
+
+// Update maxScroll if screen resizes
+window.addEventListener("resize", () => {
+    targetScroll = Math.min(targetScroll, getMaxScroll());
+});
 </script>
     </body>
 </html>
