@@ -547,6 +547,21 @@
                     object-fit: cover; /* fills square, crops if needed */
                 }
             }
+            
+            /* Mobile responsive layout: vertical scroll */
+@media (max-width: 768px) {
+    #scroll-container {
+        flex-direction: column !important;
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+    }
+    .parallax-section {
+        width: 100% !important;
+        min-height: 100vh;
+        transform: none !important;
+    }
+}
         </style>
     </head>
     <body>
@@ -605,26 +620,51 @@
                 </div>
             </section>
             <section class="parallax-section">
-                <h2>Our Team</h2>
+                <h2>Our Head Team</h2>
                 <div class="team-container">
                     <div class="team-member">
                         <div class="team-block">PHOTO REDACTED</div>
                         <p class="team-name">Peter Pisoň</p>
                         <p class="team-role">Statuary Organ</p>
                     </div>
-                    <div class="team-member">
-                        <div class="team-block">Member 2</div>
-                        <p>Role</p>
-                    </div>
-                    <div class="team-member">
+                  <div class="team-member">
                         <a href="https://link.socialfurs.com/kenziethefloof/" class="team-link">
                             <div class="team-block">
-                                <img src="kenzie2.jpeg" alt="KenzieTheFloof" />
+                                <img src="parmin.JPG" alt="Parmin Yazdani" />
                             </div>
-                            <p class="team-name">KenzieTheFloof</p>
-                            <p class="team-role">Executive Director</p>
+                            <p class="team-name">Lizzy</p>
+                            <p class="team-role">Team Leader</p>
                         </a>
                     </div>
+                <div class="team-member" style="position:relative;">
+    <a href="https://link.socialfurs.com/kenziethefloof/"
+       class="team-link"
+       style="text-decoration:none; color:inherit; display:inline-block;">
+        
+        <div class="team-block" style="position:relative;">
+            <img src="kenzie2.jpeg" alt="KenzieTheFloof" />
+
+            <!-- badge -->
+            <div style="
+                position:absolute;
+                top:6px;
+                left:6px;
+                background:#fff;
+                color:#000;
+                font-size:0.65rem;
+                font-weight:700;
+                padding:4px 6px;
+                letter-spacing:0.05em;
+                z-index:10;
+            ">
+                LEAD
+            </div>
+        </div>
+
+        <p class="team-name">KenzieTheFloof</p>
+        <p class="team-role">Executive Director</p>
+    </a>
+</div>
                 </div>
                 <div class="button-group" style="margin-top: 2rem"><a href="#">More Team Members</a></div>
             </section>
@@ -679,45 +719,81 @@
         </div>
 
         <div id="progress-bar-container"><div id="progress-bar"></div></div>
+<script>
+const scrollContainer = document.getElementById("scroll-container");
+let targetScroll = 0,
+    currentScroll = 0;
+const ease = 0.08;
+const sections = document.querySelectorAll(".parallax-section");
 
-        <script>
-            const scrollContainer = document.getElementById("scroll-container");
-            let targetScroll = 0,
-                currentScroll = 0;
-            const ease = 0.08;
-            const sections = document.querySelectorAll(".parallax-section");
+// Handle mouse wheel / trackpad
+window.addEventListener(
+    "wheel",
+    (e) => {
+        targetScroll += e.deltaY;
+        e.preventDefault();
+    },
+    { passive: false }
+);
 
-            window.addEventListener(
-                "wheel",
-                (e) => {
-                    targetScroll += e.deltaY;
-                    e.preventDefault();
-                },
-                { passive: false }
-            );
+// Handle touch / swipe for mobile
+let touchStartX = 0;
+let touchStartY = 0;
+let isTouching = false;
 
-            function animate() {
-                const maxScroll = (sections.length - 1) * window.innerWidth;
-                targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+scrollContainer.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isTouching = true;
+    }
+});
 
-                currentScroll += (targetScroll - currentScroll) * ease;
-                scrollContainer.style.transform = `translateX(${-currentScroll}px)`;
+scrollContainer.addEventListener("touchmove", (e) => {
+    if (!isTouching) return;
+    const touchX = e.touches[0].clientX;
+    const touchY = e.touches[0].clientY;
+    const deltaX = touchStartX - touchX;
+    const deltaY = touchStartY - touchY;
 
-                sections.forEach((sec, i) => {
-                    const offset = (currentScroll - i * window.innerWidth) * 0.05;
-                    sec.style.transform = `translateY(${offset}px)`;
-                });
+    // On mobile, vertical swipe scrolls horizontal container
+    targetScroll += deltaY;
+    touchStartX = touchX;
+    touchStartY = touchY;
 
-                const stickyLogo = document.getElementById("sticky-logo");
-                if (currentScroll > window.innerWidth) stickyLogo.classList.add("visible");
-                else stickyLogo.classList.remove("visible");
+    e.preventDefault();
+}, { passive: false });
 
-                const progress = currentScroll / maxScroll;
-                document.getElementById("progress-bar").style.width = `${Math.min(100, Math.max(0, progress * 100))}%`;
+scrollContainer.addEventListener("touchend", () => {
+    isTouching = false;
+});
 
-                requestAnimationFrame(animate);
-            }
-            animate();
-        </script>
+function animate() {
+    const maxScroll = (sections.length - 1) * window.innerWidth;
+    targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+
+    currentScroll += (targetScroll - currentScroll) * ease;
+    scrollContainer.style.transform = `translateX(${-currentScroll}px)`;
+
+    // Parallax offset
+    sections.forEach((sec, i) => {
+        const offset = (currentScroll - i * window.innerWidth) * 0.05;
+        sec.style.transform = `translateY(${offset}px)`;
+    });
+
+    // Sticky logo
+    const stickyLogo = document.getElementById("sticky-logo");
+    if (currentScroll > window.innerWidth) stickyLogo.classList.add("visible");
+    else stickyLogo.classList.remove("visible");
+
+    // Progress bar
+    const progress = currentScroll / maxScroll;
+    document.getElementById("progress-bar").style.width = `${Math.min(100, Math.max(0, progress * 100))}%`;
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
     </body>
 </html>
