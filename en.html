@@ -721,36 +721,31 @@
         <div id="progress-bar-container"><div id="progress-bar"></div></div>
 <script>
 const scrollContainer = document.getElementById("scroll-container");
-let targetScroll = 0,
-    currentScroll = 0;
-const ease = 0.08;
 const sections = document.querySelectorAll(".parallax-section");
+let targetScroll = 0;
+let currentScroll = 0;
+const ease = 0.08;
 
-// Recalculate max scroll dynamically
+// Prevent vertical page scroll
+document.body.style.overflow = "hidden";
+
+// Dynamic max scroll
 function getMaxScroll() {
-    let totalWidth = 0;
-    sections.forEach(sec => {
-        totalWidth += sec.offsetWidth;
-    });
-    return totalWidth - window.innerWidth;
+    return scrollContainer.scrollWidth - window.innerWidth;
 }
 
-// Mouse wheel / trackpad
-window.addEventListener(
-    "wheel",
-    (e) => {
-        targetScroll += e.deltaY;
-        e.preventDefault();
-    },
-    { passive: false }
-);
+// Mouse wheel scrolling
+window.addEventListener("wheel", (e) => {
+    targetScroll += e.deltaY;
+    e.preventDefault();
+}, { passive: false });
 
-// Touch / swipe for mobile
+// Mobile touch scrolling
 let touchStartY = 0;
 let isTouching = false;
 
 scrollContainer.addEventListener("touchstart", (e) => {
-    if (e.touches.length === 1) {
+    if(e.touches.length === 1) {
         touchStartY = e.touches[0].clientY;
         isTouching = true;
     }
@@ -760,26 +755,24 @@ scrollContainer.addEventListener("touchmove", (e) => {
     if (!isTouching) return;
     const touchY = e.touches[0].clientY;
     const deltaY = touchStartY - touchY;
-
-    // Scale swipe distance for smoother horizontal scroll
-    targetScroll += deltaY * 1.2; 
+    targetScroll += deltaY * 1.5; // multiply for sensitivity
     touchStartY = touchY;
-
-    e.preventDefault();
+    e.preventDefault(); // prevent page from scrolling vertically
 }, { passive: false });
 
 scrollContainer.addEventListener("touchend", () => {
     isTouching = false;
 });
 
+// Animation loop
 function animate() {
-    const maxScroll = getMaxScroll(); // use dynamic width
+    const maxScroll = getMaxScroll();
     targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
 
     currentScroll += (targetScroll - currentScroll) * ease;
     scrollContainer.style.transform = `translateX(${-currentScroll}px)`;
 
-    // Parallax vertical offset
+    // Vertical parallax effect
     sections.forEach((sec, i) => {
         const offset = (currentScroll - i * sec.offsetWidth) * 0.05;
         sec.style.transform = `translateY(${offset}px)`;
@@ -787,7 +780,7 @@ function animate() {
 
     // Sticky logo
     const stickyLogo = document.getElementById("sticky-logo");
-    if (currentScroll > window.innerWidth) stickyLogo.classList.add("visible");
+    if(currentScroll > window.innerWidth) stickyLogo.classList.add("visible");
     else stickyLogo.classList.remove("visible");
 
     // Progress bar
@@ -799,7 +792,7 @@ function animate() {
 
 animate();
 
-// Update maxScroll if screen resizes
+// Update maxScroll on resize
 window.addEventListener("resize", () => {
     targetScroll = Math.min(targetScroll, getMaxScroll());
 });
