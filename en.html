@@ -549,15 +549,24 @@
             }
             
             /* Mobile responsive layout: vertical scroll */
-@media (max-width: 768px) {
+
+            
+            @media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
     #scroll-container {
-        flex-direction: column !important;
-        width: 100% !important;
-        height: auto !important;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
         transform: none !important;
     }
+
     .parallax-section {
-        width: 100% !important;
+        width: 100%;
+        height: auto;
         min-height: 100vh;
         transform: none !important;
     }
