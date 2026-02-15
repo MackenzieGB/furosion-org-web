@@ -729,82 +729,95 @@
 
         <div id="progress-bar-container"><div id="progress-bar"></div></div>
 <script>
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
 const scrollContainer = document.getElementById("scroll-container");
 const sections = document.querySelectorAll(".parallax-section");
-let targetScroll = 0;
-let currentScroll = 0;
-const ease = 0.08;
+const progressBar = document.getElementById("progress-bar");
+const stickyLogo = document.getElementById("sticky-logo");
 
-// Prevent vertical page scroll
-document.body.style.overflow = "hidden";
+if (!isMobile) {
+    /* =====================
+       DESKTOP HORIZONTAL
+       ===================== */
+    let targetScroll = 0;
+    let currentScroll = 0;
+    const ease = 0.08;
 
-// Dynamic max scroll
-function getMaxScroll() {
-    return scrollContainer.scrollWidth - window.innerWidth;
-}
-
-// Mouse wheel scrolling
-window.addEventListener("wheel", (e) => {
-    targetScroll += e.deltaY;
-    e.preventDefault();
-}, { passive: false });
-
-// Mobile touch scrolling
-let touchStartY = 0;
-let isTouching = false;
-
-scrollContainer.addEventListener("touchstart", (e) => {
-    if(e.touches.length === 1) {
-        touchStartY = e.touches[0].clientY;
-        isTouching = true;
+    function onWheel(e) {
+        targetScroll += e.deltaY;
+        e.preventDefault();
     }
-});
 
-scrollContainer.addEventListener("touchmove", (e) => {
-    if (!isTouching) return;
-    const touchY = e.touches[0].clientY;
-    const deltaY = touchStartY - touchY;
-    targetScroll += deltaY * 1.5; // multiply for sensitivity
-    touchStartY = touchY;
-    e.preventDefault(); // prevent page from scrolling vertically
-}, { passive: false });
+    window.addEventListener("wheel", onWheel, { passive: false });
 
-scrollContainer.addEventListener("touchend", () => {
-    isTouching = false;
-});
+    function animate() {
+        const maxScroll = (sections.length - 1) * window.innerWidth;
+        targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
 
-// Animation loop
-function animate() {
-    const maxScroll = getMaxScroll();
-    targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+        currentScroll += (targetScroll - currentScroll) * ease;
+        scrollContainer.style.transform = `translateX(${-currentScroll}px)`;
 
-    currentScroll += (targetScroll - currentScroll) * ease;
-    scrollContainer.style.transform = `translateX(${-currentScroll}px)`;
+        sections.forEach((sec, i) => {
+            const offset = (currentScroll - i * window.innerWidth) * 0.05;
+            sec.style.transform = `translateY(${offset}px)`;
+        });
 
-    // Vertical parallax effect
-    sections.forEach((sec, i) => {
-        const offset = (currentScroll - i * sec.offsetWidth) * 0.05;
-        sec.style.transform = `translateY(${offset}px)`;
+        if (currentScroll > window.innerWidth) stickyLogo.classList.add("visible");
+        else stickyLogo.classList.remove("visible");
+
+        const progress = currentScroll / maxScroll;
+        progressBar.style.width = `${Math.min(100, Math.max(0, progress * 100))}%`;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+} else {
+    /* =====================
+       MOBILE VERTICAL
+       ===================== */
+
+    // HARD RESET scrolling behaviour
+    document.documentElement.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
+    document.body.style.overflowX = "hidden";
+    document.body.style.webkitOverflowScrolling = "touch";
+
+    // Disable transforms completely
+    scrollContainer.style.transform = "none";
+    scrollContainer.style.flexDirection = "column";
+
+    sections.forEach(sec => {
+        sec.style.transform = "none";
     });
 
-    // Sticky logo
-    const stickyLogo = document.getElementById("sticky-logo");
-    if(currentScroll > window.innerWidth) stickyLogo.classList.add("visible");
-    else stickyLogo.classList.remove("visible");
+    // Simple, safe scroll animations
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, { threshold: 0.15 });
 
-    // Progress bar
-    const progress = currentScroll / maxScroll;
-    document.getElementById("progress-bar").style.width = `${Math.min(100, Math.max(0, progress * 100))}%`;
+    sections.forEach(sec => {
+        sec.style.opacity = "0";
+        sec.style.transform = "translateY(40px)";
+        sec.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(sec);
+    });
 
-    requestAnimationFrame(animate);
+    // Progress bar based on REAL scroll
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+        progressBar.style.width = `${progress * 100}%`;
+    });
 }
-
-animate();
-
-// Update maxScroll on resize
-window.addEventListener("resize", () => {
-    targetScroll = Math.min(targetScroll, getMaxScroll());
-});
 </script>
     </body>
 </html>
