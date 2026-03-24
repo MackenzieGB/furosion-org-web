@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Team Members | FUROSION o.z.</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial Black", Arial, sans-serif;
+    background: #fff;
+    color: #000;
+    text-align: center;
+}
+
+/* --- Section --- */
+.section {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Title --- */
+h1 {
+    font-size: 6vw;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin: 3rem 0 1.5rem;
+    font-size: 2rem;
+}
+
+/* --- Team Layout --- */
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* --- Member --- */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    width: 160px; /* key for alignment */
+}
+
+/* clickable wrapper */
+.team-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Block --- */
+.team-block {
+    width: 150px;
+    height: 150px;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.team-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.team-link:hover .team-block img {
+    transform: scale(1.05);
+}
+
+.team-member:hover .team-block {
+    transform: scale(1.05);
+}
+
+/* --- Text (aligned fix) --- */
+.team-name {
+    margin-top: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    min-height: 2.4em;
+}
+
+.team-nick {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    min-height: 1.2em;
+}
+
+.team-role {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    min-height: 1.2em;
+}
+
+/* --- Back button --- */
+.back {
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    border: 2px solid #000;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+}
+
+.back:hover {
+    transform: scale(1.05);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 12vw;
+    }
+
+    .team-block {
+        width: 110px;
+        height: 110px;
+    }
+
+    .team-member {
+        width: 130px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="section">
+    <h1>TEAM</h1>
+
+    <!-- ===== LEADERSHIP ===== -->
+    <h2>Leadership</h2>
+    <div class="team-container">
+
+        <div class="team-member">
+            <a href="https://link.socialfurs.com/kenziethefloof" class="team-link">
+                <div class="team-block">
+                    <img src="kenzie2.jpeg" alt="KenzieTheFloof">
+                </div>
+                <div class="team-name">KenzieTheFloof</div>
+                <div class="team-nick">Kenzie</div>
+                <div class="team-role">Executive Director</div>
+            </a>
+        </div>
+
+        <div class="team-member">
+            <div class="team-block"><p style="color: aliceblue">PHOTO REDACTED</p></div>
+            <div class="team-name">Peter Pisoň</div>
+            <div class="team-nick">—</div>
+            <div class="team-role">Statuary Organ</div>
+        </div>
+
+    </div>
+
+    <!-- ===== CORE TEAM ===== -->
+    <h2>Core Team</h2>
+    <div class="team-container">
+
+        <div class="team-member">
+            <a href="#" class="team-link">
+                <div class="team-block">
+                    <img src="parmin.JPG" alt="Lizzy">
+                </div>
+                <div class="team-name">Lizzy</div>
+                <div class="team-nick">__</div>
+                <div class="team-role">Team Leader</div>
+            </a>
+        </div>
+
+        <!-- <div class="team-member">
+            <div class="team-block">
+                <img src="placeholder.jpg" alt="">
+            </div>
+            <div class="team-name">Example Name</div>
+            <div class="team-nick">Nickname</div>
+            <div class="team-role">Coordinator</div>
+        </div> -->
+
+    </div>
+
+    <!-- ===== VOLUNTEERS ===== -->
+    <h2>Volunteers</h2>
+    <div class="team-container">
+
+        <div class="team-member">
+            <div class="team-block">
+                <img src="fetak.png" alt="Fendix">
+            </div>
+            <div class="team-name">Fendix</div>
+            <div class="team-nick">Dominik</div>
+            <div class="team-role">Assistant</div>
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back">← Back to main page</a>
+</div>
+
+</body>
+</html>
