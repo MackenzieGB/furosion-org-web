@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>News | FUROSION o.z.</title>
+
+<meta name="description" content="Latest updates, event announcements, and activity reports from Furosion o.z., a youth-led organisation in Bratislava, Slovakia.">
+<meta name="keywords" content="Furosion news, youth events Slovakia, Bratislava meetups, Furosion updates, nonprofit news, community events">
+<meta name="author" content="FUROSION o.z.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://furosion.org/news.html">
+
+<meta property="og:title" content="News | FUROSION o.z.">
+<meta property="og:description" content="Official updates and event news from Furosion o.z.">
+<meta property="og:image" content="https://furosion.org/furosionozsquare.png">
+
+<meta name="theme-color" content="#000000">
+
+<link rel="icon" href="/favicon-32x32.png">
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial Black", Arial, sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+/* HEADER */
+.header {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.header h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1;
+}
+
+.header p {
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-bottom: 3px solid #000;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    transform: scale(1.05);
+}
+
+/* CONTAINER */
+.section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 3rem 1.5rem;
+}
+
+/* NEWS BLOCK (CLICKABLE ARTICLE STYLE) */
+.block {
+    border: 3px solid #000;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.block:hover {
+    transform: translateY(-5px);
+}
+
+.block h2 {
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+}
+
+.block p {
+    line-height: 1.6;
+    opacity: 0.85;
+    margin-bottom: 0.8rem;
+}
+
+/* TAG */
+.tag {
+    display: inline-block;
+    border: 2px solid #000;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* EXPANDABLE ARTICLE */
+.article-content {
+    display: none;
+    margin-top: 1rem;
+}
+
+.block.active .article-content {
+    display: block;
+}
+
+/* FOOTER */
+.footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: clamp(2rem, 10vw, 3.5rem);
+    }
+}
+
+    /* FOOTER */
+.footer-block {
+    border: 3px solid #000;
+    padding: 2rem;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>NEWS</h1>
+    <p>FUROSION o.z.</p>
+</div>
+
+<div class="nav">
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/programs.html">Programs</a>
+    <a href="/team.html">Team</a>
+    <a href="/transparency.html">Transparency</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/news.html">News</a>
+</div>
+
+<div class="section">
+
+    <!-- NEWSLETTER SECTION -->
+<div class="section">
+
+    <div class="block">
+
+        <h2>Newsletter Updates</h2>
+
+        <p>
+            Furosion o.z. shares official updates through a newsletter system. This includes organisational announcements, internal updates, and general news about the organisation’s development.
+        </p>
+
+        <p style="opacity:0.8;">
+            Please note: this newsletter does <b>not include Furosion Outings event announcements</b>. Those are shared separately through event-specific channels.
+        </p>
+
+        <hr style="margin:1.5rem 0; border:1px solid #000; opacity:0.2;">
+
+        <!-- FORM -->
+        <form method="post" action="https://newsletter.furosion.org/subscription/form" class="listmonk-form">
+
+            <h3 style="margin-bottom:1rem;">Subscribe</h3>
+
+            <input type="hidden" name="nonce" />
+
+            <p style="margin-bottom:0.8rem;">
+                <input type="email" name="email" required placeholder="E-mail"
+                style="width:100%; padding:0.8rem; border:2px solid #000;">
+            </p>
+
+            <p style="margin-bottom:0.8rem;">
+                <input type="text" name="name" placeholder="Name (optional)"
+                style="width:100%; padding:0.8rem; border:2px solid #000;">
+            </p>
+
+            <p style="margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+                <input id="5865c" type="checkbox" name="l" checked value="5865c5a1-db57-418f-9712-c622bcdd8e30" />
+                <label for="5865c">Furosion ORG updates</label>
+            </p>
+
+            <altcha-widget challengeurl="https://newsletter.furosion.org/api/public/captcha/altcha"></altcha-widget>
+
+            <input type="submit" value="Subscribe"
+                style="
+                    margin-top:1rem;
+                    padding:0.8rem 1.5rem;
+                    border:2px solid #000;
+                    background:#fff;
+                    font-weight:bold;
+                    cursor:pointer;
+                ">
+
+        </form>
+
+    </div>
+
+</div>
+    
+<div class="block" onclick="toggle(this)">
+    <h2>St. Patrick’s Day Meetup Recap</h2>
+    <div class="meta">March 2026 · Event Recap</div>
+
+    <div class="article-content">
+        <p>
+            Furosion o.z. hosted a structured community meetup in Bratislava as part of its Furosion Outings program.
+            The event focused on safe, organised social interaction and planned group activities.
+        </p>
+
+        <p>
+            Around 25 participants attended. The meetup began at a central meeting point before moving to a quieter outdoor location where activities were held.
+        </p>
+
+        <span class="tag">Event Recap</span>
+    </div>
+</div>
+
+<div class="block" onclick="toggle(this)">
+    <h2>Furosion Outings Expansion Planning</h2>
+    <div class="meta">March 2026 · Organisation Update</div>
+
+    <div class="article-content">
+        <p>
+            Furosion o.z. is currently working on expanding its structured event system to support larger meetups and improved logistics.
+        </p>
+
+        <p>
+            Future plans include introducing larger-scale community events, improved equipment, and more structured coordination systems.
+        </p>
+
+        <span class="tag">Update</span>
+    </div>
+</div>
+
+<div class="block" onclick="toggle(this)">
+    <h2>New Volunteer Structure Introduced</h2>
+    <div class="meta">February 2026 · Internal Update</div>
+
+    <div class="article-content">
+        <p>
+            The organisation is introducing a clearer internal structure for volunteers and team members to improve event coordination.
+        </p>
+
+        <p>
+            This includes defined roles for leadership, coordination, and on-site event support.
+        </p>
+
+        <span class="tag">Organisation</span>
+    </div>
+</div>
+
+</div>
+
+<div class="footer-block">
+<p>FUROSION o.z. © 2026 | All rights reserved</p>
+<p>Registered civic association in Slovakia</p>
+<p>Tomášikova 45/A, Bratislava</p>
+<p>IČO: 57528900</p>
+</div>
+
+<script>
+function toggle(el) {
+    el.classList.toggle("active");
+}
+</script>
+<script src="https://newsletter.furosion.org/public/static/altcha.umd.js"></script>
+</body>
+</html>

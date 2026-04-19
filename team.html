@@ -14,7 +14,6 @@
 
 <link rel="canonical" href="https://furosion.org/team.html">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Team Members | FUROSION o.z.">
 <meta property="og:description" content="Meet the leadership, core team, and volunteers behind Furosion o.z.">
 <meta property="og:type" content="website">
@@ -22,22 +21,18 @@
 <meta property="og:image" content="https://furosion.org/furosionozsquare.png">
 <meta property="og:site_name" content="FUROSION o.z.">
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Team Members | FUROSION o.z.">
 <meta name="twitter:description" content="The people behind Furosion o.z., a structured youth-led organisation.">
 <meta name="twitter:image" content="https://furosion.org/furosionozsquare.png">
 
-<!-- Theme -->
 <meta name="theme-color" content="#000000">
 
-<!-- Icons -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<!-- Structured Data: Team -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,7 +79,7 @@ body {
     text-align: center;
 }
 
-/* --- Section --- */
+/* SECTION */
 .section {
     min-height: 100vh;
     padding: 4rem 2rem;
@@ -94,7 +89,7 @@ body {
     justify-content: center;
 }
 
-/* --- Title --- */
+/* TITLE */
 h1 {
     font-size: 6vw;
     margin-bottom: 2rem;
@@ -105,7 +100,7 @@ h2 {
     font-size: 2rem;
 }
 
-/* --- Team Layout --- */
+/* TEAM GRID */
 .team-container {
     display: flex;
     justify-content: center;
@@ -114,17 +109,23 @@ h2 {
     flex-wrap: wrap;
 }
 
-/* --- Member --- */
+/* MEMBER */
 .team-member {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     text-align: center;
-    width: 160px; /* key for alignment */
+    width: 160px;
+    padding: 0.5rem;
+    transition: 0.2s;
+    border: 3px solid transparent;
 }
 
-/* clickable wrapper */
+.team-member:hover {
+    border-color: #000;
+}
+
+/* CLICKABLE WRAP */
 .team-link {
     text-decoration: none;
     color: inherit;
@@ -133,7 +134,7 @@ h2 {
     align-items: center;
 }
 
-/* --- Block --- */
+/* IMAGE BOX */
 .team-block {
     width: 150px;
     height: 150px;
@@ -142,7 +143,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
+    transition: 0.25s ease;
 }
 
 .team-block img {
@@ -160,11 +161,10 @@ h2 {
     transform: scale(1.05);
 }
 
-/* --- Text (aligned fix) --- */
+/* TEXT */
 .team-name {
     margin-top: 10px;
     font-weight: 700;
-    line-height: 1.2;
     min-height: 2.4em;
 }
 
@@ -180,7 +180,7 @@ h2 {
     min-height: 1.2em;
 }
 
-/* --- Back button --- */
+/* BACK BUTTON */
 .back {
     margin-top: 3rem;
     padding: 1rem 2rem;
@@ -196,7 +196,7 @@ h2 {
     transform: scale(1.05);
 }
 
-/* --- Responsive --- */
+/* MOBILE */
 @media (max-width: 768px) {
     h1 {
         font-size: 12vw;
@@ -219,7 +219,6 @@ h2 {
 <div class="section">
     <h1>TEAM</h1>
 
-    <!-- ===== LEADERSHIP ===== -->
     <h2>Leadership</h2>
     <div class="team-container">
 
@@ -235,15 +234,15 @@ h2 {
         </div>
 
         <div class="team-member">
-            <div class="team-block"><p style="color: aliceblue">PHOTO REDACTED</p></div>
+            <div class="team-block">
+                <p style="color:#fff; font-size:0.8rem; opacity:0.7;">PHOTO REDACTED</p>
+            </div>
             <div class="team-name">Peter Pisoň</div>
-            
-            <div class="team-role">Statuary Organ</div>
+            <div class="team-role">Statutory Organ</div>
         </div>
 
     </div>
 
-    <!-- ===== CORE TEAM ===== -->
     <h2>Core Team</h2>
     <div class="team-container">
 
@@ -257,18 +256,8 @@ h2 {
             </a>
         </div>
 
-        <!-- <div class="team-member">
-            <div class="team-block">
-                <img src="placeholder.jpg" alt="">
-            </div>
-            <div class="team-name">Example Name</div>
-            <div class="team-nick">Nickname</div>
-            <div class="team-role">Coordinator</div>
-        </div> -->
-
     </div>
 
-    <!-- ===== VOLUNTEERS ===== -->
     <h2>Team Members</h2>
     <div class="team-container">
 
@@ -280,6 +269,7 @@ h2 {
             <div class="team-nick">Dominik</div>
             <div class="team-role">Team Member</div>
         </div>
+
         <a class="team-link" href="https://www.instagram.com/rocky_the.pawsome">
         <div class="team-member">
             <div class="team-block">
@@ -289,7 +279,8 @@ h2 {
             <div class="team-nick">Lucia</div>
             <div class="team-role">Team Member</div>
         </div>
-</a>
+        </a>
+
     </div>
 
     <a href="index.html" class="back">← Back to main page</a>
