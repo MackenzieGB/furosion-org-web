@@ -190,6 +190,15 @@
                 margin-bottom: 1rem;
             }
 
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            a:hover {
+                opacity: 0.8;
+            }
+
             p {
                 max-width: 750px;
                 line-height: 1.6;
@@ -213,6 +222,49 @@
 
             .dark .button {
                 border-color: #fff;
+                color: #fff;
+            }
+
+            .partners-wrapper {
+                margin-top: 2rem;
+                width: 100%;
+            }
+
+            .partners-wrapper h3 {
+                margin: 2rem 0 1rem;
+                font-size: 1.2rem;
+            }
+
+            .partners-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+            }
+
+            .partner-card {
+                border: 3px solid #000;
+                padding: 1.5rem;
+                min-width: 180px;
+                text-align: center;
+                transition: 0.2s;
+                background: #fff;
+            }
+
+            .partner-card img {
+                max-width: 120px;
+                max-height: 60px;
+                object-fit: contain;
+                margin-bottom: 0.5rem;
+            }
+
+            .partner-card:hover {
+                transform: scale(1.05);
+            }
+
+            .dark .partner-card {
+                border-color: #fff;
+                background: #000;
                 color: #fff;
             }
 
@@ -365,7 +417,41 @@
                 data-fillout-popup-size="large"></div>
             <script src="https://server.fillout.com/embed/v1/"></script>
         </section>
+        <section class="section">
+            <h2>Partneri</h2>
 
+            <p>
+                Furosion o.z. spolupracuje s partnermi, ktorí podporujú mládežnícke komunitné aktivity, organizáciu
+                podujatí a rozvoj bezpečných priestorov pre mladých ľudí.
+            </p>
+
+            <p>
+                Naši partneri sú uvádzaní v rámci webovej sekcie, na propagačných materiáloch a vybraných podujatí ako
+                podporovatelia komunitných aktivít.
+            </p>
+
+            <div class="partners-wrapper">
+                <h3>Hlavní partneri</h3>
+                <div class="partners-grid">
+                    <a href="https://socialfurs.com/">
+                        <div class="partner-card">
+                            <img src="https://socialfurs.com/logo.png" alt="SocialFurs Logo" />
+                            <p>Technická Podpora</p>
+                        </div>
+                    </a>
+                </div>
+
+                <h3>Medialni partneri</h3>
+                <div class="partners-grid">
+                    <h4>Stále hladáme :]</h4>
+                </div>
+
+                <h3>Iný partneri</h3>
+                <div class="partners-grid">
+                    <h4>Stále hladáme :]</h4>
+                </div>
+            </div>
+        </section>
         <section class="section dark">
             <h2>Kontakt</h2>
             <p>FUROSION o.z.</p>
