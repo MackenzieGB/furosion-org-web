@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="sk">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>FUROSION o.z. | Mládežnícke podujatia a komunitná organizácia Slovensko</title>
+        <title>FUROSION o.z. | Youth Events & Community Organisation Slovakia</title>
 
         <meta
             name="description"
-            content="Furosion o.z. je mládežnícka nezisková organizácia so sídlom v Bratislave, ktorá organizuje bezpečné a štruktúrované podujatia, stretnutia a komunitné projekty na Slovensku." />
+            content="Furosion o.z. is a Bratislava-based youth-led nonprofit organising safe, structured events, meetups, and community projects for people in Slovakia." />
         <meta
             name="keywords"
-            content="Furosion, Furosion o.z., mládežnícka organizácia Slovensko, Bratislava mládežnícke podujatia, komunitné stretnutia Slovensko, nezisková organizácia Slovensko, mládežnícke aktivity Bratislava, furry podujatia Slovensko, therian komunita podujatia" />
+            content="Furosion, Furosion o.z., youth organisation Slovakia, Bratislava youth events, community meetups Slovakia, nonprofit Slovakia, youth activities Bratislava, furry events Slovakia, therian community events" />
         <meta name="author" content="FUROSION o.z." />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="google" content="notranslate" />
@@ -19,10 +19,10 @@
         <link rel="canonical" href="https://furosion.org/" />
 
         <!-- Open Graph -->
-        <meta property="og:title" content="FUROSION o.z. | Mládežnícka organizácia podujatí" />
+        <meta property="og:title" content="FUROSION o.z. | Youth Events Organisation" />
         <meta
             property="og:description"
-            content="Štruktúrovaná mládežnícka nezisková organizácia organizujúca bezpečné podujatia a komunitné aktivity v Bratislave a na Slovensku." />
+            content="Structured youth-led organisation organising safe events and community activities in Bratislava and across Slovakia." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://furosion.org/" />
         <meta property="og:image" content="https://furosion.org/furosionozsquare.png" />
@@ -31,9 +31,7 @@
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="FUROSION o.z." />
-        <meta
-            name="twitter:description"
-            content="Mládežnícka nezisková organizácia organizujúca komunitné podujatia." />
+        <meta name="twitter:description" content="Youth-led nonprofit organising structured community events." />
         <meta name="twitter:image" content="https://furosion.org/furosionozsquare.png" />
 
         <link rel="icon" href="/favicon-32x32.png" />
@@ -48,7 +46,7 @@
                 "name": "FUROSION o.z.",
                 "url": "https://furosion.org",
                 "logo": "https://furosion.org/furosionozsquare.png",
-                "description": "Mládežnícka nezisková organizácia so sídlom v Bratislave organizujúca štruktúrované podujatia a komunitné aktivity.",
+                "description": "Youth-led nonprofit organisation based in Bratislava organising structured events and community activities.",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Tomášikova 45/A",
@@ -74,6 +72,7 @@
                 color: #000;
             }
 
+            /* NAV */
             nav {
                 position: fixed;
                 top: 0;
@@ -103,6 +102,7 @@
                 transform: scale(1.1);
             }
 
+            /* SECTIONS */
             .section {
                 min-height: 100vh;
                 padding: 6rem 2rem 3rem;
@@ -111,10 +111,12 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
+
                 max-width: 1000px;
                 margin: 0 auto;
             }
 
+            /* HERO */
             .hero {
                 background: #000;
                 color: #fff;
@@ -135,6 +137,7 @@
                 opacity: 0.8;
             }
 
+            /* BLOCKS */
             .block-container {
                 display: flex;
                 flex-wrap: wrap;
@@ -155,6 +158,7 @@
                 transform: scale(1.05);
             }
 
+            /* DARK */
             .dark {
                 background: #000;
                 color: #fff;
@@ -164,27 +168,7 @@
                 border-color: #fff;
             }
 
-            /* LANGUAGE SWITCH */
-            .lang-switch {
-                position: absolute;
-                top: 10px;
-                right: 20px;
-                font-weight: bold;
-            }
-
-            .lang-switch a {
-                text-decoration: none;
-                color: #000;
-                border: 2px solid #000;
-                padding: 0.4rem 0.8rem;
-                transition: 0.2s;
-            }
-
-            .lang-switch a:hover {
-                background: #000;
-                color: #fff;
-            }
-
+            /* TEXT */
             h2 {
                 font-size: 2rem;
                 margin-bottom: 1rem;
@@ -197,6 +181,7 @@
                 margin-bottom: 1rem;
             }
 
+            /* BUTTON */
             .button {
                 margin-top: 1rem;
                 padding: 1rem 2rem;
@@ -216,6 +201,7 @@
                 color: #fff;
             }
 
+            /* FOOTER */
             footer {
                 background: #000;
                 color: #fff;
@@ -225,6 +211,7 @@
                 opacity: 0.85;
             }
 
+            /* MOBILE IMPROVEMENTS */
             @media (max-width: 768px) {
                 .hero h1 {
                     font-size: 14vw;
@@ -257,15 +244,15 @@
     <body>
         <nav>
             <div class="nav-container">
-                <a href="index.html">Domov</a>
-                <a href="about.html">O nás</a>
-                <a href="programs.html">Programy</a>
-                <a href="partners.html">Partneri</a>
-                <a href="transparency.html">Transparentnosť</a>
-                <a href="news.html">Novinky</a>
-                <a href="contact.html">Kontakt</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="programs.html">Programs</a>
+                <a href="partners.html">Partners</a>
+                <a href="transparency.html">Transparency</a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
                 <a
-                    href="en/index.html"
+                    href="https://furosion.org"
                     style="
                         border: 2px solid #000;
                         padding: 0.05rem 0.8rem;
@@ -278,103 +265,114 @@
                     "
                     onmouseover="this.style.transform='scale(1.08)'"
                     onmouseout="this.style.transform='scale(1)'">
-                    EN
+                    SK
                 </a>
             </div>
         </nav>
 
+        <!-- HERO -->
         <section class="section hero">
             <img src="furosionsquare_white.png" alt="FUROSION logo" />
             <h1>FUROSION</h1>
             <p>
-                Furosion o.z. je mládežnícka nezisková organizácia so sídlom v Bratislave, ktorá organizuje
-                štruktúrované osobné podujatia pre mladých ľudí a členov rôznych komunít, so zameraním na bezpečnosť,
-                prístupnosť a budovanie komunity.
+                Furosion o.z. is a Bratislava-based youth-led nonprofit organisation that plans and delivers structured
+                in-person events for young people, and people that are parts of different fandoms, focusing on safety,
+                accessibility, and community building.
             </p>
         </section>
 
+        <!-- MISSION -->
         <section class="section">
-            <h2>Misia a vízia</h2>
+            <h2>Mission & Vision</h2>
             <p>
-                Našou misiou je vytvárať bezpečné a štruktúrované prostredie, kde sa ľudia môžu zúčastňovať komunitných
-                podujatí, rozvíjať praktické zručnosti a budovať zmysluplné vzťahy.
+                Our mission is to create safe, structured environments where people can participate in community events,
+                develop real-world skills, and build meaningful connections.
             </p>
 
             <div class="block-container">
-                <div class="block">ŠTRUKTÚRA</div>
-                <div class="block">KOORDINÁCIA</div>
-                <div class="block">BEZPEČNOSŤ</div>
-                <div class="block">KOMUNITA</div>
+                <div class="block">STRUCTURE</div>
+                <div class="block">COORDINATION</div>
+                <div class="block">SAFETY</div>
+                <div class="block">COMMUNITY</div>
             </div>
         </section>
 
+        <!-- WHAT WE DO -->
         <section class="section dark">
-            <h2>Čo robíme</h2>
+            <h2>What We Do</h2>
             <p>
-                Furosion organizuje komunitné tematické osobné podujatia v Bratislave a okolí. Zahŕňajú štruktúrované
-                stretnutia, tematické výlety a koordinované skupinové aktivity v bezpečnom prostredí.
+                Furosion organises fandom-focused in-person events in Bratislava and surrounding regions. These include
+                structured meetups, themed outings, and coordinated group activities designed to provide a safe and
+                accessible environment.
             </p>
 
             <p>
-                Účastníci sa môžu zúčastniť podujatí, spoznať nových ľudí a dobrovoľne sa zapojiť do organizácie a
-                logistiky.
+                Participants can attend events, connect with others, and optionally contribute as volunteers, gaining
+                experience in logistics, coordination, and event planning.
             </p>
         </section>
 
         <section class="section">
-            <h2>Pre koho sme</h2>
+            <h2>Who We Serve</h2>
             <p>
-                Furosion o.z. slúži najmä mladým ľuďom a členom rôznych komunít v Bratislave a okolí. Aktivity sú určené
-                pre tých, ktorí sa zaujímajú o komunitné podujatia, kreatívne subkultúry a organizované skupinové
-                aktivity.
+                Furosion o.z. primarily serves young people or people with specific interests in the Bratislava region
+                and surrounding areas. Activities are designed for individuals interested in community participation,
+                creative subcultures, and structured group events.
             </p>
         </section>
 
+        <!-- PROJECT -->
         <section class="section dark">
             <h2>Furosion Outings</h2>
             <p>
-                Náš hlavný aktívny projekt Furosion Outings poskytuje mládežnícke stretnutia v menších, bezpečnejších
-                skupinách s organizovaným programom.
+                Our main active project, Furosion Outings, provides youth-oriented meetups designed for smaller, safer
+                group environments. Events typically include organised activities, group coordination, and structured
+                schedules.
             </p>
 
-            <p>Najnovšie podujatia dosiahli viac ako 25 účastníkov a stále sa rozširujú.</p>
+            <p>Recent events have reached over 25 participants and continue to expand.</p>
 
-            <a href="/programs.html" class="button">Zobraziť programy</a>
+            <a href="/programs.html" class="button">View Programs</a>
         </section>
 
+        <!-- SUPPORT -->
         <section class="section">
-            <h2>Podpora organizácie</h2>
-            <p>Furosion o.z. je financovaný komunitou a budúcimi zdrojmi ako sú dary, sponzoring a granty.</p>
+            <h2>Support the Organisation</h2>
+            <p>
+                Furosion o.z. is supported through community contributions and future funding sources such as donations,
+                sponsorships, and grants.
+            </p>
 
-            <p>Prostriedky sa používajú na organizáciu podujatí, materiály, vybavenie a prevádzkové náklady.</p>
+            <p>Funds are used for event organisation, materials, equipment, and operational costs.</p>
 
-            <a href="https://donorbox.org/donate-to-furosion-o-z" class="button">Darovať</a>
-
+            <a href="https://donorbox.org/donate-to-furosion-o-z" class="button">Donate</a>
             <br />
-            <h2>ALEBO</h2>
+            <h2>OR</h2>
 
-            <p>Podporte Furosion zapojením sa do našich projektov. Prihlásiť sa môžete tlačidlom nižšie.</p>
-
+            <p>
+                Support furosion by joining us and putting your free time into our future projects. You can apply by
+                pressing the button below.
+            </p>
             <div
                 data-fillout-id="5zY3cQdRb9us"
                 data-fillout-embed-type="popup"
-                data-fillout-button-text="Pridať sa!"
+                data-fillout-button-text="Join us!"
                 data-fillout-dynamic-resize
                 data-fillout-button-color="#000000"
                 data-fillout-inherit-parameters
                 data-fillout-popup-size="large"></div>
             <script src="https://server.fillout.com/embed/v1/"></script>
         </section>
-
+        <!-- CONTACT -->
         <section class="section dark">
-            <h2>Kontakt</h2>
+            <h2>Contact</h2>
             <p>FUROSION o.z.</p>
             <p>Tomášikova 45/A, Bratislava</p>
             <p>IČO: 57528900</p>
             <p>Email: hello@furosion.org</p>
-            <p>Telefón: +421 2/3322 1246</p>
+            <p>Phone: +421 2/3322 1246</p>
         </section>
 
-        <footer>© FUROSION o.z. 2026 | Všetky práva vyhradené</footer>
+        <footer>© FUROSION o.z. 2026 | All rights reserved</footer>
     </body>
 </html>

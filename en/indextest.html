@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FUROSION Language Select</title>
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+<style>
+html, body {
+  margin:0; padding:0;
+  width:100%; height:100%;
+  font-family:'Arial Black', Arial, sans-serif;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* --- CRT Screen Bulge & VHS Effect --- */
+.crt-screen {
+  width:100%; height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  background:#111;
+}
+
+/* Bulge effect on desktop */
+@media(min-width:768px){
+  .crt-screen {
+    border-radius:50% / 8%;
+    transform: scale(1.05) perspective(1000px);
+  }
+}
+
+/* Scanlines + VHS flicker */
+.crt-screen::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 2px,
+    rgba(0,0,0,0) 2px,
+    rgba(0,0,0,0) 4px
+  );
+  z-index:2;
+}
+
+@keyframes flicker {
+  0%,100% {opacity:1;}
+  20% {opacity:0.95;}
+  40% {opacity:0.9;}
+  60% {opacity:0.97;}
+  80% {opacity:0.93;}
+}
+.crt-screen::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:transparent;
+  z-index:3;
+  animation:flicker 0.15s infinite;
+}
+
+/* RGB split glitch */
+@keyframes rgbShift {
+  0%,100% {transform:translate(0,0);}
+  25% {transform:translate(-2px,0);}
+  50% {transform:translate(2px,1px);}
+  75% {transform:translate(-1px,-1px);}
+}
+.crt-screen .vhs-glitch {
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:transparent;
+  mix-blend-mode:screen;
+  animation:rgbShift 0.2s infinite alternate;
+  z-index:4;
+}
+
+/* --- Popup window --- */
+.popup {
+  position:relative;
+  width:360px; max-width:90%;
+  background:#fff;
+  border:5px solid #000;
+  border-radius:8px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  z-index:5;
+}
+
+/* Title bar */
+.title-bar {
+  width:100%;
+  background:#000;
+  color:#fff;
+  padding:0.5rem 1rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:bold;
+}
+.close-btn {
+  width:20px; height:20px;
+  background:red;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+/* Popup content */
+.popup-content {
+  width:100%;
+  padding:2rem 1rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  background:#222;
+  color:#fff;
+}
+
+/* Flags */
+.flags {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:1rem;
+  margin-top:2rem;
+}
+.flag-btn {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:0.5rem;
+  padding:1rem;
+  background:#000;
+  border:2px solid #fff;
+  cursor:pointer;
+  min-width:100px;
+  transition:0.3s;
+  text-decoration:none; /* remove underline */
+  color:#fff; /* make text visible */
+  position:relative;
+  overflow:hidden;
+}
+.flag-btn img {
+  width:80px;
+  height:50px;
+  object-fit:cover;
+  border:1px solid #fff;
+}
+.flag-btn span {
+  font-weight:bold;
+  color:#fff;
+}
+.flag-btn:hover {
+  transform:scale(1.05);
+  box-shadow:0 10px 20px rgba(255,255,255,0.2);
+}
+
+/* Hover VHS flicker effect */
+.flag-btn::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  border:1px solid transparent;
+}
+.flag-btn:hover::after {
+  border:1px solid rgba(255,255,255,0.3);
+  animation:rgbShift 0.2s infinite alternate;
+}
+
+/* Click/active effect */
+.flag-btn:active {
+  transform:scale(0.95);
+}
+
+/* Mobile responsiveness */
+@media(max-width:480px){
+  .popup { width:90%; border-radius:6px;}
+  .flag-btn img { width:60px; height:40px;}
+  .crt-screen { border-radius:0; transform:scale(1);}
+}
+</style>
+</head>
+<body>
+<div class="crt-screen">
+  <div class="vhs-glitch"></div>
+  <div class="popup">
+    <div class="title-bar">
+      <span>Vyberte Jazyk / Choose a Language</span>
+      <div class="close-btn"></div>
+    </div>
+    <div class="popup-content">
+      <div class="flags">
+        <a href="/sk" class="flag-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Slovakia.svg" alt="Slovak">
+          <span>Slovenský</span>
+        </a>
+        <a href="/en.html" class="flag-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="English">
+          <span>English</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

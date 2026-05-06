@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="sk-SK">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ups!</title>
+    <title>Whoops!</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -142,6 +142,7 @@
         border: 1px solid rgba(255, 255, 255, 0.02);
       }
 
+      /* ===== STAFF UI GATE ===== */
       .gate {
         margin-top: 18px;
         display: flex;
@@ -196,12 +197,12 @@
       </div>
 
       <div>
-        <h1>Ups!</h1>
-        <p class="lead">Pracujeme na úpravách, čoskoro budeme späť :3</p>
+        <h1>Whoops!</h1>
+        <p class="lead">We are sorting things out, we will be back soon :3</p>
 
         <div class="status">
           <span class="dot"></span>
-          <div class="meta">Prebieha údržba služby</div>
+          <div class="meta">Service maintenance in progress</div>
         </div>
 
         <div class="illustration">
@@ -212,11 +213,11 @@
 
         <!-- STAFF GATE -->
         <div class="gate">
-          <input id="pw" type="password" placeholder="Prístup pre zamestnancov" />
-          <button onclick="check()">Vstúpiť</button>
+          <input id="pw" type="password" placeholder="Staff access" />
+          <button onclick="check()">Enter</button>
         </div>
 
-        <div class="hint" id="msg">Iba interný prístup</div>
+        <div class="hint" id="msg">Internal access only</div>
       </div>
     </main>
 
@@ -225,18 +226,19 @@
         const input = document.getElementById("pw").value.trim();
         const msg = document.getElementById("msg");
 
+        // password (must match EXACTLY)
         const secret = "MackAndCheese";
 
         if (input === secret) {
           msg.style.color = "#7CFF7A";
-          msg.textContent = "Prístup povolený... presmerovanie";
+          msg.textContent = "Access granted... redirecting";
 
           setTimeout(() => {
             window.location.href = "https://example.com";
           }, 600);
         } else {
           msg.style.color = "#ff7a7a";
-          msg.textContent = "Nesprávny prístupový kód";
+          msg.textContent = "Incorrect access code";
         }
       }
     </script>
