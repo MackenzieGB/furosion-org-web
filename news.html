@@ -9,9 +9,11 @@
         <meta
             name="description"
             content="Aktuality, oznamy a správy z činnosti Furosion o.z., mládežníckej organizácie so sídlom v Bratislave." />
+
         <meta
             name="keywords"
             content="Furosion novinky, mládežnícke podujatia Slovensko, Bratislava meetup, Furosion aktuality, nezisková organizácia" />
+
         <meta name="author" content="FUROSION o.z." />
         <meta name="robots" content="index, follow" />
         <meta name="google" content="notranslate" />
@@ -25,6 +27,12 @@
         <meta name="theme-color" content="#000000" />
 
         <link rel="icon" href="/favicon-32x32.png" />
+
+        <!-- FONT AWESOME -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
 
         <style>
             * {
@@ -72,27 +80,6 @@
 
             .nav a:hover {
                 transform: scale(1.05);
-            }
-
-            /* LANGUAGE SWITCH */
-            .lang-switch {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                font-weight: bold;
-            }
-
-            .lang-switch a {
-                text-decoration: none;
-                color: #000;
-                border: 2px solid #000;
-                padding: 0.4rem 0.8rem;
-                transition: 0.2s;
-            }
-
-            .lang-switch a:hover {
-                background: #000;
-                color: #fff;
             }
 
             .section {
@@ -144,17 +131,6 @@
                 text-align: center;
             }
 
-            .newsletter-note {
-                font-size: 0.9rem;
-                opacity: 0.8;
-                margin-top: 0.5rem;
-            }
-
-            .ig {
-                margin-top: 1rem;
-                font-weight: bold;
-            }
-
             .social-grid {
                 display: flex;
                 flex-wrap: wrap;
@@ -179,11 +155,13 @@
 
             .social-card h3 {
                 margin-bottom: 0.5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
             }
 
             .social-card p {
                 font-weight: bold;
-                opacity: 1;
                 margin-bottom: 0.5rem;
             }
 
@@ -226,32 +204,31 @@
 
                 <div class="social-grid">
                     <a href="https://instagram.com/furosionorg" target="_blank" class="social-card">
-                        <h3>Instagram</h3>
+                        <h3><i class="fa-brands fa-instagram"></i> Instagram</h3>
                         <p>@furosionorg</p>
                         <span>Fotografie, oznámenia a podujatia</span>
                     </a>
 
                     <a href="https://tiktok.com/@furosionorg" target="_blank" class="social-card">
-                        <h3>TikTok</h3>
+                        <h3><i class="fa-brands fa-tiktok"></i> TikTok</h3>
                         <p>@furosionorg</p>
                         <span>Krátke videá a komunitný obsah</span>
                     </a>
 
                     <a class="social-card">
-                        <h3>YouTube</h3>
+                        <h3><i class="fa-brands fa-youtube"></i> YouTube</h3>
                         <p>COMING SOON</p>
                         <span>Video obsah a archív projektov</span>
                     </a>
 
                     <a href="https://whatsapp.com/channel/0029Vb7S2UhGzzKKmLhHMt3f" target="_blank" class="social-card">
-                        <h3>WhatsApp Kanál</h3>
+                        <h3><i class="fa-brands fa-whatsapp"></i> WhatsApp Kanál</h3>
                         <p>Furosion Events</p>
                         <span>Rýchle komunitné oznámenia</span>
                     </a>
                 </div>
             </div>
 
-            
             <div class="block">
                 <h2>Mediálne a partnerské informácie</h2>
 
@@ -259,22 +236,14 @@
                     Organizácie, partneri a médiá môžu kontaktovať reprezentatíva Furosion o.z. prostredníctvom e-mailu mackenzie@furosion.org pre informácie o spolupráci, komunitných projektoch alebo pripravovaných
                     aktivitách.
                 </p>
-
-            
             </div>
         </div>
 
-         <div class="footer-block">
-            <p>Furosion o.z. © 2026 | Všetky práva vyhradené</p>
+        <div class="footer-block">
+            <p>FUROSION o.z. © 2026 | Všetky práva vyhradené</p>
             <p>Registrované občianske združenie na Slovensku</p>
             <p>Tomášikova 45/A, Bratislava</p>
             <p>IČO: 57528900</p>
         </div>
-
-        <script>
-            function toggle(el) {
-                el.classList.toggle("active");
-            }
-        </script>
     </body>
 </html>

@@ -18,6 +18,8 @@
 
         <link rel="canonical" href="https://furosion.org/" />
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
         <!-- Open Graph -->
         <meta property="og:title" content="FUROSION o.z. | Youth Events Organisation" />
         <meta
@@ -201,6 +203,63 @@
                 color: #fff;
             }
 
+             .social-footer {
+                background: #000;
+                color: #fff;
+                padding: 3rem 2rem;
+                text-align: center;
+                border-top: 3px solid #fff;
+            }
+
+            .social-footer h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+
+            .social-footer p {
+                opacity: 0.8;
+                margin-bottom: 1.5rem;
+            }
+
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .social-icon {
+                width: 56px;
+                height: 56px;
+                border: 2px solid #fff;
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.2s;
+                background: transparent;
+            }
+
+            .social-icon:hover {
+                transform: scale(1.08);
+                background: #fff;
+            }
+
+            .social-icon:hover svg {
+                fill: #000;
+            }
+
+            .social-icon i {
+                font-size: 26px;
+                color: #fff;
+                transition: 0.2s;
+            }
+
+            .social-icon:hover i {
+                color: #000;
+            }
+
             /* FOOTER */
             footer {
                 background: #000;
@@ -363,16 +422,49 @@
                 data-fillout-popup-size="large"></div>
             <script src="https://server.fillout.com/embed/v1/"></script>
         </section>
+
         <!-- CONTACT -->
         <section class="section dark">
-            <h2>Contact</h2>
+            <h2>Contact:</h2>
             <p>Furosion o.z.</p>
             <p>Tomášikova 45/A, Bratislava</p>
             <p>IČO: 57528900</p>
             <p>Email: hello@furosion.org</p>
             <p>Phone: +421 2/3322 1246</p>
         </section>
+       
+        <footer class="social-footer">
+            <h3>Follow us online:</h3>
 
-        <footer>© FUROSION o.z. 2026 | All rights reserved</footer>
+            <p>Follow our events, news, and community activities on our social media platforms.</p>
+
+            <div class="social-icons">
+                <!-- Instagram -->
+                <a href="https://instagram.com/furosionorg" class="social-icon" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@furosionorg" class="social-icon" target="_blank" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+                <!-- WhatsApp -->
+                <a
+                    href="https://whatsapp.com/channel/0029Vb7S2UhGzzKKmLhHMt3f"
+                    class="social-icon"
+                    target="_blank"
+                    aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <!-- YouTube (optional future icon) 
+                <a href="#" class="social-icon" aria-label="YouTube coming soon">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>-->
+            </div>
+
+            <div class="footer-bottom">© Furosion o.z. 2026 | Všetky práva vyhradené</div>
+        </footer>
     </body>
 </html>
