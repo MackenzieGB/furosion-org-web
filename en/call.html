@@ -2,18 +2,141 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>CALL BUTTON VIA WEB | Furosion o.z.</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Secure Call Widget | FUROSION o.z.</title>
+
+        <meta
+            name="description"
+            content="Secure web-based calling system for FUROSION o.z. for urgent or special communication purposes." />
+
+        <meta name="author" content="FUROSION o.z." />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="theme-color" content="#000000" />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Arial Black", Arial, sans-serif;
+                background: #f5f5f5;
+                color: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                padding: 2rem;
+            }
+
+            .container {
+                max-width: 700px;
+                width: 100%;
+                background: #fff;
+                border: 3px solid #000;
+                padding: 2rem;
+                text-align: center;
+                box-shadow: 6px 6px 0 #000;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+                line-height: 1.4;
+            }
+
+            p {
+                opacity: 0.8;
+                line-height: 1.6;
+                margin-top: 1rem;
+                font-size: 0.95rem;
+            }
+
+            .widget-box {
+                margin-top: 2rem;
+                padding: 1.5rem;
+                border: 2px dashed #000;
+                background: #fafafa;
+                display: flex;
+                justify-content: center;
+            }
+
+            .warning {
+                font-size: 0.85rem;
+                opacity: 0.7;
+                margin-top: 1.5rem;
+            }
+
+            .footer-note {
+                margin-top: 2rem;
+                font-size: 0.8rem;
+                opacity: 0.6;
+            }
+        </style>
     </head>
+
     <body>
-        <h1>
-            This button connects you to us without you having to dial our phone number through your mobile network
-            operator. It is to be used only in emergencies or special situations.
-        </h1>
-    
-        <div id="myZadarmaCallmeWidget18434"></div><script>  var myZadarmaCallmeWidget18434;  var myZadarmaCallmeWidgetFn18434 = function() {    myZadarmaCallmeWidget18434 = new ZadarmaCallmeWidget("myZadarmaCallmeWidget18434");    myZadarmaCallmeWidget18434.create({"widgetId": "rrtfkkRGc1CbAeXJ9R2bgpjLRgbXba5kt861dP2gKE3ffA1NuPK5ntukx4346F6knv57jp9s2d482MYbK4KuzktXbpsjruUj78649ac556917029601184d9c9baf191", "sipId":"142732", "domElement":"myZadarmaCallmeWidget18434"}, {"shape":"square", "language":"en", "width":"0", "dtmf":true, "dtmf_position": "top","dtmf_time_to_disappear": "20",                                                    "font": "'Trebuchet MS','Helvetica CY',sans-serif", "color_call": "rgb(255, 255, 255)", "color_bg_call": "rgb(126, 211, 33)", "color_border_call": "rgb(191, 233, 144)", "is_custom_hover": 1, "color_call_hover": "rgb(255, 255, 255)", "bg_call_hover": "rgb(100, 167, 26)", "border_call_hover": "rgb(178, 211, 141)", "color_connection": "rgb(255, 255, 255)", "color_bg_connection": "rgb(33, 211, 166)", "color_border_connection": "rgb(144, 233, 211)", "color_calling": "rgb(255, 255, 255)", "color_border_calling": "rgb(255, 218, 128)", "color_bg_calling": "rgb(255, 181, 0)", "color_ended": "rgb(255, 255, 255)", "color_bg_ended": "rgb(164, 164, 164)", "color_border_ended": "rgb(210, 210, 210)"    });  };  if (window.addEventListener) {    window.addEventListener('load', myZadarmaCallmeWidgetFn18434, false);  } else if (window.attachEvent) {    window.attachEvent('onload', myZadarmaCallmeWidgetFn18434);  }</script>
-        <p>If button isn't visible, something broke. We're sorry but you have to call us using our normal phone number, which you can find on our contact page. Thank you for your understanding.</p>
+        <div class="container">
+            <h1>Secure web calling access for FUROSION o.z.</h1>
+
+            <p>
+                This interface allows you to contact us directly through a secure web-based call system without using a
+                traditional phone dialler. It is intended for urgent communication or special coordination cases only.
+            </p>
+
+            <div class="widget-box">
+                <div id="myZadarmaCallmeWidget18434"></div>
+            </div>
+
+            <p class="warning">
+                If the call button does not appear, the service may be temporarily unavailable. In that case, please use
+                the contact information provided on our Contact page.
+            </p>
+
+            <p class="footer-note">FUROSION o.z. communication systems · Internal contact interface</p>
+        </div>
+
         <div id="zadarmaScripts"></div>
+
         <script>
+            var myZadarmaCallmeWidget18434;
+            var myZadarmaCallmeWidgetFn18434 = function () {
+                myZadarmaCallmeWidget18434 = new ZadarmaCallmeWidget("myZadarmaCallmeWidget18434");
+
+                myZadarmaCallmeWidget18434.create(
+                    {
+                        widgetId:
+                            "rrtfkkRGc1CbAeXJ9R2bgpjLRgbXba5kt861dP2gKE3ffA1NuPK5ntukx4346F6knv57jp9s2d482MYbK4KuzktXbpsjruUj78649ac556917029601184d9c9baf191",
+                        sipId: "142732",
+                        domElement: "myZadarmaCallmeWidget18434"
+                    },
+                    {
+                        shape: "square",
+                        language: "en",
+                        width: "0",
+                        dtmf: true,
+                        dtmf_position: "top",
+                        dtmf_time_to_disappear: "20",
+                        font: "'Trebuchet MS','Helvetica CY',sans-serif",
+                        color_call: "rgb(255,255,255)",
+                        color_bg_call: "rgb(0,0,0)",
+                        color_border_call: "rgb(0,0,0)",
+                        is_custom_hover: 1,
+                        color_call_hover: "rgb(255,255,255)",
+                        bg_call_hover: "rgb(40,40,40)"
+                    }
+                );
+            };
+
+            if (window.addEventListener) {
+                window.addEventListener("load", myZadarmaCallmeWidgetFn18434, false);
+            } else if (window.attachEvent) {
+                window.attachEvent("onload", myZadarmaCallmeWidgetFn18434);
+            }
+
             (function () {
                 var script = document.createElement("script");
                 script.src = "https://my.zadarma.com/callmewidget/v2.0.9/loader.js";

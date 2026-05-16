@@ -203,6 +203,49 @@
                 color: #fff;
             }
 
+            .partners-wrapper {
+                margin-top: 2rem;
+                width: 100%;
+            }
+
+            .partners-wrapper h3 {
+                margin: 2rem 0 1rem;
+                font-size: 1.2rem;
+            }
+
+            .partners-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+            }
+
+            .partner-card {
+                border: 3px solid #000;
+                padding: 1.5rem;
+                min-width: 180px;
+                text-align: center;
+                transition: 0.2s;
+                background: #fff;
+            }
+
+            .partner-card img {
+                max-width: 120px;
+                max-height: 60px;
+                object-fit: contain;
+                margin-bottom: 0.5rem;
+            }
+
+            .partner-card:hover {
+                transform: scale(1.05);
+            }
+
+            .dark .partner-card {
+                border-color: #fff;
+                background: #000;
+                color: #fff;
+            }
+
              .social-footer {
                 background: #000;
                 color: #fff;
@@ -382,14 +425,19 @@
 
         <!-- PROJECT -->
         <section class="section dark">
-            <h2>Furosion Outings</h2>
+            <h2>Our Programs</h2>
+
             <p>
-                Our main active project, Furosion Outings, provides youth-oriented meetups designed for smaller, safer
-                group environments. Events typically include organised activities, group coordination, and structured
-                schedules.
+                Furosion o.z. operates multiple structured youth initiatives that support safe, organised, and
+                community-focused in-person meetups in Bratislava and surrounding areas.
             </p>
 
-            <p>Recent events have reached over 25 participants and continue to expand.</p>
+            <p>
+                Our activities include regular meetups, larger community events, workshops, and festival projects, each
+                with clear structure and coordination for safe operation.
+            </p>
+
+            <p>Explore our programs and learn more about each initiative and how to get involved.</p>
 
             <a href="/programs.html" class="button">View Programs</a>
         </section>
@@ -397,21 +445,17 @@
         <!-- SUPPORT -->
         <section class="section">
             <h2>Support the Organisation</h2>
-            <p>
-                Furosion o.z. is supported through community contributions and future funding sources such as donations,
-                sponsorships, and grants.
-            </p>
+            <p>Furosion o.z. is community-funded and supported by future resources such as donations, sponsorships, and grants.</p>
 
             <p>Funds are used for event organisation, materials, equipment, and operational costs.</p>
 
             <a href="https://donorbox.org/donate-to-furosion-o-z" class="button">Donate</a>
+
             <br />
             <h2>OR</h2>
 
-            <p>
-                Support furosion by joining us and putting your free time into our future projects. You can apply by
-                pressing the button below.
-            </p>
+            <p>Support Furosion by getting involved in our projects. You can apply using the button below.</p>
+
             <div
                 data-fillout-id="5zY3cQdRb9us"
                 data-fillout-embed-type="popup"
@@ -421,6 +465,48 @@
                 data-fillout-inherit-parameters
                 data-fillout-popup-size="large"></div>
             <script src="https://server.fillout.com/embed/v1/"></script>
+        </section>
+        <section class="section">
+            <h2>Partners</h2>
+
+            <p>
+                Furosion o.z. collaborates with partners who support youth community activities, event organisation,
+                and the development of safe spaces for young people.
+            </p>
+
+            <p>
+                Our partners are listed on the website section, promotional materials, and selected events as
+                supporters of community activities.
+            </p>
+
+            <div class="partners-wrapper">
+                <h3>Main Partners</h3>
+                <div class="partners-grid">
+                    <a href="https://www.instagram.com/bratislavska_platforma_mladych/">
+                        <div class="partner-card">
+                            <img src="https://blavff.sk/bpm.png" alt="Youth Hub Logo" />
+                            <p>Space Provision</p>
+                        </div>
+                    </a>
+                </div>
+
+                <h3>Media Partners</h3>
+                <div class="partners-grid">
+                    <h4>Still looking :]</h4>
+                </div>
+
+                <h3>Other Partners</h3>
+                <div class="partners-grid">
+                    <div class="partners-grid">
+                        <a href="https://socialfurs.com/">
+                            <div class="partner-card">
+                                <img src="https://socialfurs.com/logo.png" alt="SocialFurs Logo" />
+                                <p>Technical Support</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- CONTACT -->
