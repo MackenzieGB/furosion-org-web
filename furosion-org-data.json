@@ -1,0 +1,215 @@
+{
+  "organisation": {
+    "name": "FUROSION o.z.",
+    "type": "Youth-led nonprofit civic association (občianske združenie)",
+    "country": "Slovak Republic",
+    "city": "Bratislava",
+    "website": "https://furosion.org",
+    "founded": "2026",
+    "languages": ["sk", "en"],
+    "description_sk": "Furosion o.z. je mládežnícka nezisková organizácia so sídlom v Bratislave, ktorá organizuje štruktúrované osobné podujatia pre mladých ľudí a členov rôznych komunít, so zameraním na bezpečnosť, prístupnosť a budovanie komunity.",
+    "description_en": "Furosion o.z. is a Bratislava-based youth-led nonprofit organisation that plans and delivers structured in-person events for young people and people that are parts of different fandoms, focusing on safety, accessibility, and community building."
+  },
+
+  "legal": {
+    "status": "Registered civic association in Slovakia",
+    "registered_office": "Tomášikova 45/A, 831 04 Bratislava – Nové Mesto, Slovak Republic",
+    "ico": "57528900",
+    "registration_number": "VVS/1-900/90-73962",
+    "file_number": "OU-BA-OVVS1-2026/452706"
+  },
+
+  "contact": {
+    "main_email": "hello@furosion.org",
+    "phone": "+421 2/3322 1246",
+    "emails": {
+      "general": "info@furosion.org",
+      "support": "support@furosion.org",
+      "administration": "administration@furosion.org",
+      "legal": "legal@furosion.org",
+      "partnerships": "j.pison@furosion.org",
+      "team_member_pattern": "[member first name]@furosion.org"
+    },
+    "postal_address": {
+      "street": "Tomášikova 45/A",
+      "postal_code": "831 04",
+      "city": "Bratislava – Nové Mesto",
+      "country": "Slovak Republic"
+    },
+    "mail_handling": "Mailbox checked every Friday. Email recommended for faster response."
+  },
+
+  "social_media": {
+    "instagram": "https://instagram.com/furosionorg",
+    "tiktok": "https://tiktok.com/@furosionorg",
+    "youtube": "https://www.youtube.com/@furosionorg",
+    "whatsapp_channel": "https://whatsapp.com/channel/0029Vb7S2UhGzzKKmLhHMt3f"
+  },
+
+  "mission_and_values": {
+    "mission_sk": "Našou misiou je vytvárať bezpečné a štruktúrované prostredie, kde sa ľudia môžu zúčastňovať komunitných podujatí, rozvíjať praktické zručnosti a budovať zmysluplné vzťahy.",
+    "mission_en": "Our mission is to create safe, structured environments where people can participate in community events, develop real-world skills, and build meaningful connections.",
+    "core_values": ["Structure", "Coordination", "Safety", "Community"]
+  },
+
+  "what_we_do": {
+    "description_sk": "Furosion organizuje komunitné tematické osobné podujatia v Bratislave a okolí. Zahŕňajú štruktúrované stretnutia, tematické výlety a koordinované skupinové aktivity v bezpečnom prostredí.",
+    "description_en": "Furosion organises fandom-focused in-person events in Bratislava and surrounding regions. These include structured meetups, themed outings, and coordinated group activities designed to provide a safe and accessible environment.",
+    "participation": "Participants can attend events, connect with others, and optionally contribute as volunteers, gaining experience in logistics, coordination, and event planning."
+  },
+
+  "target_audience": {
+    "description_sk": "Furosion o.z. slúži najmä mladým ľuďom a členom rôznych komunít v Bratislave a okolí. Aktivity sú určené pre tých, ktorí sa zaujímajú o komunitné podujatia, kreatívne subkultúry a organizované skupinové aktivity.",
+    "description_en": "Furosion o.z. primarily serves young people or people with specific interests in the Bratislava region and surrounding areas. Activities are designed for individuals interested in community participation, creative subcultures, and structured group events.",
+    "focus_communities": ["Youth", "Furry fandom", "Therian community", "Creative subcultures", "Internet-based interest communities"]
+  },
+
+  "team": {
+    "leadership": [
+      {
+        "name": "Mackenzie",
+        "online_name": "KenzieTheFloof",
+        "role_sk": "Výkonný riaditeľ",
+        "role_en": "Executive Director",
+        "link": "https://link.socialfurs.com/kenziethefloof",
+        "photo": "kenzie2.jpeg"
+      },
+      {
+        "name": "Peter Pisoň",
+        "role_sk": "Štatutárny orgán",
+        "role_en": "Statutory Representative",
+        "photo": "redacted"
+      }
+    ],
+    "core_team": [
+      {
+        "name": "Lizzy",
+        "role_sk": "Vedúci on-ground tímu",
+        "role_en": "On-ground Team Leader",
+        "photo": "lizzy.png"
+      }
+    ],
+    "team_members": [
+      {
+        "name": "Fendix",
+        "real_name": "Dominik",
+        "role_sk": "Člen tímu",
+        "role_en": "Team Member",
+        "photo": "fetak.png"
+      },
+      {
+        "name": "Rocky",
+        "real_name": "Lucia",
+        "role_sk": "Člen tímu",
+        "role_en": "Team Member",
+        "link": "https://www.instagram.com/rocky_the.pawsome",
+        "photo": "rocky.webp"
+      },
+      {
+        "name": "Kai",
+        "real_name": "Lenka",
+        "role_sk": "Člen tímu",
+        "role_en": "Team Member",
+        "link": "https://www.tiktok.com/@ginfloofs._",
+        "photo": "kai.webp"
+      }
+    ],
+    "note": "More members are involved across different activities and projects."
+  },
+
+  "programs": {
+    "overview_sk": "Furosion o.z. prevádzkuje viacero štruktúrovaných mládežníckych iniciatív, ktoré podporujú bezpečné, organizované a komunitné osobné stretnutia v Bratislave a okolí.",
+    "overview_en": "Furosion o.z. operates multiple structured youth initiatives that support safe, organised, and community-focused in-person meetups in Bratislava and surrounding areas.",
+    "active": [
+      {
+        "name": "Furosion Outings",
+        "description_sk": "Furosion Outings je jeden z hlavných aktívnych programov organizácie. Pozostáva zo štruktúrovaných stretnutí pre mladých ľudí v bezpečných verejných alebo polo-súkromných vonkajších lokalitách.",
+        "description_en": "Furosion Outings is one of the organisation's primary active programs. It consists of structured meetups for young people, typically held in safe public or semi-private outdoor locations.",
+        "target_age": "10-18",
+        "region": "Bratislava",
+        "features": ["Structured meetups", "Group activities", "Safe locations", "Youth focused"],
+        "link": "https://furosion.com"
+      },
+      {
+        "name": "BlavFF",
+        "description_sk": "BlavFF je mládežnícky komunitný festival organizovaný pod Furosion o.z., zameraný na kreativitu, komunitu, umenie a bezpečné sociálne prostredie pre mladých ľudí v Bratislave.",
+        "description_en": "BlavFF is a youth community festival organised under Furosion o.z., focused on creativity, art, community, and safe social environments for young people in Bratislava.",
+        "features": ["Artist Alley", "Workshops", "Community program", "Youth festival"],
+        "link": "https://blavff.sk"
+      }
+    ],
+    "future_initiatives": ["Community conventions", "Talent events", "Expanded meetups"]
+  },
+
+  "past_activities": {
+    "events": ["Halloween meetup", "Christmas meetup", "St. Patrick's Day meetup"],
+    "recent_participants": "25+",
+    "description": "Furosion has organised multiple themed community events, including seasonal meetups. Recent events have hosted over 25 participants and included structured coordination, organised activities, and community-focused programming."
+  },
+
+  "partners": {
+    "description_sk": "Furosion o.z. spolupracuje s partnermi, ktorí podporujú mládežnícke komunitné aktivity, organizáciu podujatí a rozvoj bezpečných priestorov pre mladých ľudí.",
+    "description_en": "Furosion o.z. collaborates with partners who support youth community activities, event organisation, and the development of safe spaces for young people.",
+    "main_partners": [
+      {
+        "name": "BPM (Bratislavská platforma mladých)",
+        "contribution": "Space Provision",
+        "link": "https://www.instagram.com/bratislavska_platforma_mladych/",
+        "logo": "https://blavff.sk/bpm.png"
+      }
+    ],
+    "media_partners": "Still looking",
+    "other_partners": [
+      {
+        "name": "SocialFurs",
+        "contribution": "Technical Support",
+        "link": "https://socialfurs.com/",
+        "logo": "https://socialfurs.com/logo.png"
+      }
+    ],
+    "partnership_opportunities": ["Event support", "Material help", "Long-term partnership", "Technical cooperation"],
+    "partnership_contact": "j.pison@furosion.org"
+  },
+
+  "funding": {
+    "model": "Community-funded with future sources including donations, sponsorships, and grants",
+    "fund_usage": [
+      "Event organisation and logistics",
+      "Materials and supplies for participants",
+      "Venue or space rental when required",
+      "Organisational tools and equipment",
+      "Administrative and professional services"
+    ],
+    "donation_link": "https://donorbox.org/donate-to-furosion-o-z",
+    "volunteer_form": "https://socialfurs.fillout.com/furosionorgdocs (document request) / Fillout popup on website (join us)"
+  },
+
+  "transparency": {
+    "governance": "The organisation is formally represented by its statutory organ in accordance with Slovak law. Operational decisions are made within the organisation's leadership structure.",
+    "financial_status": "Early stage of development, establishing long-term funding structures including a dedicated bank account.",
+    "commitment": "Furosion o.z. is committed to operating in a transparent, accountable, and responsible manner.",
+    "document_request": "https://socialfurs.fillout.com/furosionorgdocs"
+  },
+
+  "website_structure": {
+    "pages": [
+      {"url": "/", "file": "index.html", "title_sk": "Domov", "title_en": "Home"},
+      {"url": "/about.html", "file": "about.html", "title_sk": "O nás", "title_en": "About"},
+      {"url": "/programs.html", "file": "programs.html", "title_sk": "Programy", "title_en": "Programs"},
+      {"url": "/partners.html", "file": "partners.html", "title_sk": "Partneri", "title_en": "Partners"},
+      {"url": "/transparency.html", "file": "transparency.html", "title_sk": "Transparentnosť", "title_en": "Transparency"},
+      {"url": "/news.html", "file": "news.html", "title_sk": "Novinky", "title_en": "News"},
+      {"url": "/contact.html", "file": "contact.html", "title_sk": "Kontakt", "title_en": "Contact"},
+      {"url": "/team.html", "file": "team.html", "title_sk": "Tím", "title_en": "Team"},
+      {"url": "/call.html", "file": "call.html", "title_en": "Secure Call Widget", "note": "Internal use, noindex"}
+    ],
+    "english_pages_prefix": "/en/"
+  },
+
+  "branding": {
+    "logo_square": "furosionozsquare.png",
+    "logo_white_square": "furosionsquare_white.png",
+    "logo_svg": "furosionozsquare.svg",
+    "favicon": "favicon.ico"
+  }
+}
