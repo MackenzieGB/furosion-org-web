@@ -18,6 +18,11 @@
 
         <link rel="canonical" href="https://furosion.org/en/contact" />
 
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+
         <meta property="og:title" content="Contact | FUROSION o.z." />
         <meta
             property="og:description"
@@ -155,6 +160,64 @@
                     padding: 1.5rem;
                 }
             }
+            .social-footer {
+                background: #000;
+                color: #fff;
+                padding: 3rem 2rem;
+                text-align: center;
+                border-top: 3px solid #fff;
+            }
+
+            .social-footer h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+
+            .social-footer p {
+                opacity: 0.8;
+                margin-bottom: 1.5rem;
+            }
+
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .social-icon {
+                width: 56px;
+                height: 56px;
+                border: 2px solid #fff;
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.2s;
+                background: transparent;
+            }
+
+            .social-icon:hover {
+                transform: scale(1.08);
+                background: #fff;
+            }
+
+            .social-icon i {
+                font-size: 26px;
+                color: #fff;
+                transition: 0.2s;
+            }
+
+            .social-icon:hover i {
+                color: #000;
+            }
+
+            .footer-bottom {
+                margin-top: 2rem;
+                opacity: 0.65;
+                font-size: 0.85rem;
+            }
         </style>
     </head>
 
@@ -236,11 +299,20 @@
             </div>
         </div>
 
-        <div class="footer-block">
-            <p>Furosion o.z. © 2026 | All rights reserved</p>
-            <p>Registered civic association in Slovakia</p>
-            <p>Tomášikova 45/A, Bratislava</p>
-            <p>IČO: 57528900</p>
-        </div>
+        <footer class="social-footer">
+            <h3>Follow us online:</h3>
+            <p>Follow our events, news, and community activities on our social media platforms.</p>
+            <div class="social-icons">
+                <a href="https://instagram.com/furosion_org" class="social-icon" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://tiktok.com/@furosion_org" class="social-icon" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb7S2UhGzzKKmLhHMt3f" class="social-icon" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/@furosion_org" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>Furosion o.z. © 2026 | All rights reserved</p>
+                <p>Registered civic association in Slovakia</p>
+                <p>Tomášikova 45/A, Bratislava | IČO: 57528900</p>
+            </div>
+        </footer>
     </body>
 </html>
